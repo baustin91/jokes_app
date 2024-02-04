@@ -5,11 +5,12 @@ error_reporting(E_ALL);
 
 // modify these settings according to the account on your database server.
 $dbUrl = getenv('JAWSDB_URL');
-$host = $urlParts['DB_HOST'];
-$port = "3306";
-$username = $urlParts['DB_USER'];
-$user_pass = $urlParts['DB_PASS'];
-$database_in_use = $urlParts['DB_NAME'];
+$urlParts = parse_url($dbUrl);
+$host = $urlParts['host'];
+$username = $urlParts['user'];
+$password = $urlParts['pass'];
+$database = ltrim($urlParts['path'], '/');
+$port = isset($urlParts['port']) ? $urlParts['port'] : '3306'; 
 
 
 $mysqli = new mysqli($host, $username, $user_pass, $database_in_use);
