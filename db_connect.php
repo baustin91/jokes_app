@@ -13,7 +13,7 @@ $database = ltrim($urlParts['path'], '/');
 $port = isset($urlParts['port']) ? $urlParts['port'] : '3306'; 
 
 
-$mysqli = new mysqli($host, $username, $user_pass, $database_in_use);
+$mysqli = new mysqli($host, $username, $password, $database, $port);
 if ($mysqli->connect_error) {
     echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
